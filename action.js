@@ -49,6 +49,3 @@ function drawLine(from, to, color) {
 	line(from.x,from.y,to.x,to.y);
 }
 
-function getColor(colorIndex) {
-
-}

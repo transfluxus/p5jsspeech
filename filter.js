@@ -52,10 +52,13 @@ Filter.prototype.isReady = function() {
 Filter.prototype.draw = function() {
     //console.log("force draw");
     if(this.detected_object == undefined) {
-        this.detected_object = random(Object.keys(grammatic.objects).length/2) | 0;
+        var oj = (random(Object.keys(grammatic.objects).length/2) | 0) * 2 + 1;
+        //console.log(c+ " "+Object.keys(grammatic.objects)[c]);
+        this.detected_object = Object.keys(grammatic.objects)[oj];
     }
     if(this.detected_color == undefined) {
-        this.detected_color = random(Object.keys(grammatic.colors).length/2) | 0;
+        var cl = (random(Object.keys(grammatic.colors).length/2) | 0) * 2 + 1;
+        this.detected_color = Object.keys(grammatic.colors)[oj];
     }
     if(this.detected_size == undefined) {
         this.detected_size = random(20,150);
