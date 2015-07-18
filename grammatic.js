@@ -8,14 +8,14 @@ var grammatic = {
         "line": "line"
     },
     "colors" : {
-        "rot":0,
-        "red": 0,
-        "grün":1,
-        "green": 1,
-        "blau": 2,
-        "blue": 2,
-        "schwarz": 3,
-        "black": 3,
+        "rot":"red",
+        "red": "red",
+        "grün":"green",
+        "green": "green",
+        "blau": "blue",
+        "blue": "blue",
+        "schwarz": "black",
+        "black": "black",
         //"gelb" : 4,
         // "yellow" :4
     },
