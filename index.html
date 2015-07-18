@@ -4,7 +4,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
     <script type="text/javascript" src="p5.js-speech/lib/p5.speech.js"></script>
-    <script type="text/javascript" src="words.js"></script>
     <script type="text/javascript" src="grammatic.js"></script>
     <script type="text/javascript" src="filter.js"></script>
     <script type="text/javascript" src="action.js"> </script>
@@ -17,18 +16,13 @@
     myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
     function setup() {
-        for(var w in words) {
-            if (words.hasOwnProperty(w)) {
-                console.log(w);
-            }
-        }
         // graphics stuff:
         createCanvas(800, 600);
         background(255);
         myRec.onResult = parseResult; // recognition callback
         myRec.start(); // start engine
 
-    drawObject({object: 0, size: 50, color: 0});
+        drawObject({object: 0, size: 50, color: 0});
 
     }
 
@@ -40,7 +34,7 @@
     function parseResult() {
         // recognition system will often append words into phrases.
         // so hack here is to only use the last word:
-        var mostrecentword = myRec.resultString.split(' ').pop();
+        var mostrecentword = myRec.resultString.split(' ').pop().toLowerCase();
 
         console.log(mostrecentword);
 
