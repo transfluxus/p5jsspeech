@@ -45,9 +45,10 @@ Filter.prototype.clear = function() {
 };
 
 Filter.prototype.isReady = function() {
-    return this.detected_object !== undefined
-    && this.detected_object !== undefined
-    && this.detected_size !== undefined;
+    return (this.detected_object !== undefined
+    && this.detected_color !== undefined
+    && this.detected_size !== undefined) 
+    || (this.detected_object == 'line' && this.detected_color !== undefined);
 };
 
 Filter.prototype.draw = function() {
