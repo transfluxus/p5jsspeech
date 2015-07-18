@@ -1,14 +1,15 @@
 "use strict";
 var Filter = function (words) {
-    this.available_objects = words;
-    this.available_colors = {};
+    this.available_objects = words.objects;
+    this.available_colors = words.colors;
     this.available_sizes = {};
+    this.detected_object = null;
+    this.detected_color = null;
 
     this.grab_object = function grab(microphone){
         for(var w in this.available_objects) {
-            if (words.hasOwnProperty(microphone)) {
-                console.log("fsafdfad");
-                console.log(w);
+            if (this.available_objects.hasOwnProperty(microphone)) {
+                this.detected_object = w;
             }
         }
     };

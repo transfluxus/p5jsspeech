@@ -5,6 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
     <script type="text/javascript" src="p5.js-speech/lib/p5.speech.js"></script>
     <script type="text/javascript" src="words.js"></script>
+    <script type="text/javascript" src="grammatic.js"></script>
     <script type="text/javascript" src="filter.js"></script>
     <script type="text/javascript" src="action.js"> </script>
     <script>
@@ -36,7 +37,7 @@
 
         console.log(mostrecentword);
 
-        var filter = new Filter(words);
+        var filter = new Filter(grammatic);
         filter.grab_object(mostrecentword);
         if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
