@@ -1,19 +1,26 @@
-var CIRCLE = 0;
-var SQUARE = 1;
-var LINE = 2;
+var S_CIRCLE = 0;
+var S_SQUARE = 1;
+var S_LINE = 2;
 
 //var position = createVector(-1,-1);
 
 function drawObject(objectIndex) {
-	if( objectIndex == CIRCLE) {
+	console.log(objectIndex+"  "+S_SQUARE+"  "+(objectIndex == S_SQUARE));
+	if( objectIndex == S_CIRCLE) {
 		var position = randomPosition();
 		var clr = color(255,0,0);
 		var sz = random(30,60); 
 		drawCircle(position, clr,sz);
-	} else if( objectIndex == SQUARE) {
-
-	} else if( objectIndex == LINE) {
-
+	} else if(objectIndex == S_SQUARE) {
+		var position = randomPosition();
+		var clr = color(255,0,0);
+		var sz = random(30,60); 
+		drawRectangle(position,clr,sz);
+	} else if( objectIndex == S_LINE) {
+		var from = randomPosition();
+		var to = randomPosition();
+		var clr = color(255,0,0);
+		drawLine(from,to,clr);
 	}
 }
 
@@ -31,4 +38,9 @@ function drawRectangle(position,color,size) {
 	noStroke();
 	fill(color);
 	rect(position.x,position.y,size,size);	
+}
+
+function drawLine(from, to, color) {
+	stroke(color);
+	line(from.x,from.y,to.x,to.y);
 }
