@@ -8,9 +8,11 @@
     <script type="text/javascript" src="grammatic.js"></script>
     <script type="text/javascript" src="filter.js"></script>
     <script type="text/javascript" src="action.js"> </script>
+    <script type="text/javascript" src="display.js"> </script>
     <script>
     var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
     var siri = new Filter(grammatic);
+    var Display = new Display();
     myRec.continuous = true; // do continuous recognition
     myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
@@ -56,6 +58,8 @@
 
         console.log("instruction");
         console.log(siri.instruction());
+
+        Display.draw(siri.instruction());
         if(siri.isReady()) {
             console.log("READY");
             drawObject(siri.instruction());

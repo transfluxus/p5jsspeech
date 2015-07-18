@@ -53,7 +53,7 @@ function drawCircle(position, color, size) {
 function drawRectangle(position,color,size) {
 	noStroke();
 	fill(color);
-	rect(position.x,position.y,size,size);	
+	rect(position.x,position.y,size,size);
 }
 
 function drawLine(from, to, color) {
