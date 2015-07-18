@@ -19,6 +19,25 @@ var grammatic = {
         //"gelb" : 4,
         //"yellow" :4
     },
+    "positions" : {
+        "top":0,
+        // "top-center"0:,
+        // "top-right":1,
+        // "top-left"2:,
+        "bottom":3,
+        // "bottom-center":3,
+        // "bottom-right":4,
+        // "bottom-left":5,
+        "left":6,
+        // "left-center":7,
+        // "left-top":8,
+        // "left-right":9,
+        "right":10,
+        // "left-center":11,
+        // "left-top":12,
+        // "left-right":13,
+
+    },
     "clear_words" : {
         "clear" : 0,
         "start" : 0,
