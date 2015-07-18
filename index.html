@@ -4,7 +4,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
     <script type="text/javascript" src="p5.js-speech/lib/p5.speech.js"></script>
-    <script type="text/javascript" src="words.js"> </script>
+    <script type="text/javascript" src="words.js"></script>
+    <script type="text/javascript" src="grammatic.js"></script>
+    <script type="text/javascript" src="filter.js"></script>
     <script type="text/javascript" src="action.js"> </script>
     <script>
     var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
@@ -35,6 +37,9 @@
         var mostrecentword = myRec.resultString.split(' ').pop();
 
         console.log(mostrecentword);
+
+        var filter = new Filter(grammatic);
+        filter.grab_object(mostrecentword);
         if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
@@ -44,7 +49,11 @@
                 console.log("number detected "+number);
             }
         }
+<<<<<<< HEAD
         console.log("***********");
+=======
+
+>>>>>>> 5d328ea62a51b1e0886133ca91c8eefa4cc5fb85
     }
 
 
