@@ -10,10 +10,8 @@ var Filter = function (grammar) {
 };
 
 Filter.prototype.grab_object = function(microphone){
-    for(var o in this.available_objects) {
-        if (this.available_objects.hasOwnProperty(microphone)) {
-            this.detected_object = o;
-        }
+    if (this.available_objects.hasOwnProperty(microphone)) {
+        this.detected_object = this.available_objects[microphone]; 
     }
 };
 
@@ -26,10 +24,8 @@ Filter.prototype.grab_size = function(microphone){
 };
 
 Filter.prototype.grab_color = function(microphone){
-    for(var c in this.available_colors) {
-        if (this.available_colors.hasOwnProperty(microphone)) {
-            this.detected_colors = c;
-        }
+    if (this.available_colors.hasOwnProperty(microphone)) {
+        this.detected_colors = this.available_colors[microphone]; 
     }
 };
 
@@ -44,9 +40,9 @@ Filter.prototype.maybe_clear = function(microphone){
 };
 
 Filter.prototype.isReady = function() {
-    return this.detected_object != undefined
-    && this.detected_object != undefined
-    && this.detected_size != undefined;
+    return this.detected_object !== undefined
+    && this.detected_object !== undefined
+    && this.detected_size !== undefined;
 }
 
 Filter.prototype.instruction = function(){
