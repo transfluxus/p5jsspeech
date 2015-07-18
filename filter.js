@@ -28,16 +28,17 @@ Filter.prototype.grab_size = function(microphone){
 
 Filter.prototype.grab_color = function(microphone){
     if (this.available_colors.hasOwnProperty(microphone)) {
-        this.detected_color = this.available_colors[microphone]; 
+        this.detected_color = this.available_colors[microphone];
     }
 };
 
 Filter.prototype.grab_command = function(microphone){
-    if (this.available_commands.hasOwnProperty(microphone)) 
-        return this.available_commands[microphone]; 
+    if (this.available_commands.hasOwnProperty(microphone))
+        return this.available_commands[microphone];
 };
 
 Filter.prototype.clear = function() {
+    console.log("CLEARING!!");
     this.detected_object = undefined;
     this.detected_color = undefined;
     this.detected_size = undefined;
@@ -71,7 +72,7 @@ Filter.prototype.instruction = function(){
         "object": this.detected_object,
         "size": this.detected_size,
         "color": this.detected_color,
-        "position": this.detected_color
+        "position": this.detected_position
     };
 };
 

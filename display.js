@@ -1,18 +1,19 @@
 "use strict";
 
-var Display = function (instructions) {
-    this.instructions = instructions;
+var Display = function () {
+    this.padding = 0;
 };
 
-Display.prototype.draw = function(){
-    for (var key in this.instructions) {
-
-        console.log("merda"+key);
-        if(this.instructions[key] !== undefined){
-            textSize(18);
-            textAlign(RIGHT);
-            text(key , 50, 30);
-            text(instructions[key] , 100, 30);
+Display.prototype.draw = function(instructions){
+    textSize(15);
+    textAlign(RIGHT);
+    for (var key in instructions) {
+        if(instructions[key] !== undefined){
+            fill(0, 102, 153, 51);
+            text(key , this.padding, 30);
+            fill(0, 102, 153);
+            text(instructions[key] , 50+this.padding, 30);
+            this.padding += 30;
         }
     }
 };
