@@ -12,7 +12,7 @@
     <script>
     var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
     var siri = new Filter(grammatic);
-    var Display = new Display();
+    var Display = new Display(siri.instruction());
     myRec.continuous = true; // do continuous recognition
     myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
@@ -51,9 +51,11 @@
         command = siri.grab_command(mostrecentword);
         if(command == 0) { // CLEAR
             siri.clear();
+            Display.clear(siri.instruction());
         } else if(command == 1) { // DRAW
             siri.draw();
             siri.clear();
+            Display.clear(siri.instruction());
         }
 
         console.log("instruction");
