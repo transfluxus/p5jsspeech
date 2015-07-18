@@ -1,8 +1,8 @@
 var words = {
 	"Kreis": 0,
-	"Circle": 0,
+	"circle": 0,
 	"Quadrat": 1,
-	"Square": 1,
+	"square": 1,
 	"Linie": 2,
-	"Line": 2
+	"line": 2
 };
