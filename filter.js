@@ -1,11 +1,12 @@
 "use strict";
 
-var Filter = function (words) {
-    this.available_objects = words.objects;
-    this.available_colors = words.colors;
-    this.detected_object = null;
-    this.detected_color = null;
-    this.detected_size = null;
+var Filter = function (grammar) {
+    this.available_objects = grammar.objects;
+    this.available_colors = grammar.colors;
+    this.clear_command = grammar.clear_words;
+    this.detected_object = undefined;
+    this.detected_color = undefined;
+    this.detected_size = undefined;
 };
 
 Filter.prototype.grab_object = function(microphone){
@@ -28,6 +29,16 @@ Filter.prototype.grab_color = function(microphone){
     for(var c in this.available_colors) {
         if (this.available_colors.hasOwnProperty(microphone)) {
             this.detected_colors = c;
+        }
+    }
+};
+
+Filter.prototype.maybe_clear = function(microphone){
+    for(var c in this.clear_words) {
+        if (this.clear_words.hasOwnProperty(microphone)) {
+            this.detected_object = undefined;
+            this.detected_color = undefined;
+            this.detected_size = undefined;
         }
     }
 };

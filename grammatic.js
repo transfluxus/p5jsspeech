@@ -11,5 +11,9 @@ var grammatic = {
         "red":0,
         "blue":1,
         "green":2,
+    },
+    "clear_words" : {
+        "clear" : 0,
+        "start" : 0,
     }
 };
