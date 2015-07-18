@@ -5,6 +5,7 @@ var Filter = function (grammar) {
     this.available_colors = grammar.colors;
     this.available_positions = grammar.positions;
     this.available_commands = grammar.command;
+
     this.detected_object = undefined;
     this.detected_color = undefined;
     this.detected_size = undefined;
@@ -49,12 +50,12 @@ Filter.prototype.isReady = function() {
 };
 
 Filter.prototype.draw = function() {
-    console.log("force draw");
+    //console.log("force draw");
     if(this.detected_object == undefined) {
-        this.detected_object = random(3) | 0;
+        this.detected_object = random(Object.keys(grammatic.objects).length/2) | 0;
     }
     if(this.detected_color == undefined) {
-        this.detected_color = random(4) | 0;
+        this.detected_color = random(Object.keys(grammatic.colors).length/2) | 0;
     }
     if(this.detected_size == undefined) {
         this.detected_size = random(20,150);
