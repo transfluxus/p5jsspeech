@@ -43,6 +43,10 @@
         if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
+        } else if(colors.hasOwnProperty(mostrecentword)) {
+            console.log("Color: "+mostrecentword+ " "+colors[mostrecentword]);
+        } else if(other.hasOwnProperty(mostrecentword)) {
+            console.log("Other: "+mostrecentword+ " "+other[mostrecentword]);
         } else {
             var number = parseInt(mostrecentword);
             if(!isNaN(number)) {

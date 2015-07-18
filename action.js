@@ -2,6 +2,11 @@ var S_CIRCLE = 0;
 var S_SQUARE = 1;
 var S_LINE = 2;
 
+var S_RED = 5;
+var S_GREEN = 6;
+var S_BLUE = 7;
+var S_RED = 5;
+
 //var position = createVector(-1,-1);
 
 function drawObject(objectIndex) {
@@ -43,4 +48,8 @@ function drawRectangle(position,color,size) {
 function drawLine(from, to, color) {
 	stroke(color);
 	line(from.x,from.y,to.x,to.y);
+}
+
+function getColor(colorIndex) {
+
 }
