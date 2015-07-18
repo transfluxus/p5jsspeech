@@ -43,27 +43,12 @@
         siri.grab_color(mostrecentword);
         siri.grab_size(mostrecentword);
         console.log("instruction");
-        console.log(shit.instruction);
-        /*
-        if (words.hasOwnProperty(mostrecentword)) {
         console.log(siri.instruction());
-        if (words.hasOwnProperty(mostrecentword)) {
-            console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
-            drawObject(words[mostrecentword]);
-        } else if(colors.hasOwnProperty(mostrecentword)) {
-            console.log("Color: "+mostrecentword+ " "+colors[mostrecentword]);
-        } else if(other.hasOwnProperty(mostrecentword)) {
-            console.log("Other: "+mostrecentword+ " "+other[mostrecentword]);
-        } else {
-            var number = parseInt(mostrecentword);
-            if(!isNaN(number)) {
-                console.log("number detected "+number);
-            }
-        }
-        */
-        if(shit.isReady()) {
+        if(siri.isReady()) {
             console.log("READY");
-            drawObject(shit);
+            drawObject(siri);
+        } else {
+            console.log("Siri not ready yet");
         }
         console.log("***********");
     }

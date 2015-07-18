@@ -9,9 +9,9 @@ var S_BLACK = 3;
 //var S_YELLOW = 4;
 
 function drawObject(obj) {
-	var obyType = obj.instruction.detected_object;
-	var clr = getColor(obj.instruction.detected_color);
-	var size = obj.instruction.detected_size;
+	var obyType = obj.instruction().detected_object;
+	var clr = getColor(obj.instruction().detected_color);
+	var size = obj.instruction().detected_size;
 	if( obyType == S_CIRCLE) {
 		var position = randomPosition();
 		drawCircle(position, clr,sz);
