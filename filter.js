@@ -3,16 +3,15 @@
 var Filter = function (words) {
     this.available_objects = words.objects;
     this.available_colors = words.colors;
-    this.instruction = '';
     this.detected_object = null;
-    this.detected_object = null;
+    this.detected_color = null;
     this.detected_size = null;
 };
 
 Filter.prototype.grab_object = function(microphone){
-    for(var w in this.available_objects) {
+    for(var o in this.available_objects) {
         if (this.available_objects.hasOwnProperty(microphone)) {
-            this.detected_object = microphone;
+            this.detected_object = o;
         }
     }
 };
@@ -26,18 +25,19 @@ Filter.prototype.grab_size = function(microphone){
 };
 
 Filter.prototype.grab_color = function(microphone){
-    for(var w in this.available_colors) {
+    for(var c in this.available_colors) {
         if (this.available_colors.hasOwnProperty(microphone)) {
-            this.detected_colors = microphone;
+            this.detected_colors = c;
         }
     }
 };
 
 Filter.prototype.instruction = function(){
-    return {"blu" : "bla"};
-    // { "object": this.detected_object,
-    // "size": this.detected_size,
-    // "color": this.detected_color }
+    return {
+        "object": this.detected_object,
+        "size": this.detected_size,
+        "color": this.detected_color
+    };
 };
 
 
