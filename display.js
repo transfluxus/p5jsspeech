@@ -9,9 +9,11 @@ Display.prototype.draw = function(instructions){
     textAlign(RIGHT);
     for (var key in instructions) {
         if(instructions[key] !== undefined){
+            fill(0, 102, 153, 51);
             text(key , padding, 30);
+            fill(0, 102, 153);
             text(instructions[key] , 100+padding, 30);
-            padding += 50;
+            padding += 30;
         }
     }
 };
