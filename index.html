@@ -4,12 +4,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
     <script type="text/javascript" src="p5.js-speech/lib/p5.speech.js"></script>
+    <script type="text/javascript" src="words.js"></script>
     <script>
     var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
     myRec.continuous = true; // do continuous recognition
     myRec.interimResults = true; // allow partial recognition (faster, less accurate)
     var x, y;
     var dx, dy;
+
     function setup()
     {
         // graphics stuff:
