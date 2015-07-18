@@ -32,14 +32,18 @@
 
 
     function parseResult() {
+        var filter = new Filter(grammatic);
         // recognition system will often append words into phrases.
         // so hack here is to only use the last word:
         var mostrecentword = myRec.resultString.split(' ').pop();
 
         console.log(mostrecentword);
 
-        var filter = new Filter(grammatic);
         filter.grab_object(mostrecentword);
+        filter.grab_color(mostrecentword);
+        filter.grab_size(mostrecentword);
+        console.log("instruction");
+        console.log(filter.instruction);
         if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
