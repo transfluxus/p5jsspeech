@@ -45,18 +45,11 @@
         siri.maybe_clear(mostrecentword);
         console.log("instruction");
         console.log(siri.instruction());
-        if (words.hasOwnProperty(mostrecentword)) {
-            console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
-            drawObject(words[mostrecentword]);
-        } else if(colors.hasOwnProperty(mostrecentword)) {
-            console.log("Color: "+mostrecentword+ " "+colors[mostrecentword]);
-        } else if(other.hasOwnProperty(mostrecentword)) {
-            console.log("Other: "+mostrecentword+ " "+other[mostrecentword]);
+        if(siri.isReady()) {
+            console.log("READY");
+            drawObject(siri);
         } else {
-            var number = parseInt(mostrecentword);
-            if(!isNaN(number)) {
-                console.log("number detected "+number);
-            }
+            console.log("Siri not ready yet");
         }
         console.log("***********");
     }

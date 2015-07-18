@@ -43,6 +43,12 @@ Filter.prototype.maybe_clear = function(microphone){
     }
 };
 
+Filter.prototype.isReady = function() {
+    return this.detected_object != undefined
+    && this.detected_object != undefined
+    && this.detected_size != undefined;
+}
+
 Filter.prototype.instruction = function(){
     return {
         "object": this.detected_object,
@@ -50,7 +56,3 @@ Filter.prototype.instruction = function(){
         "color": this.detected_color
     };
 };
-
-
-
-
