@@ -1,11 +1,11 @@
 var grammatic = {
     "objects" : {
-        "Kreis": 0,
-        "circle": 0,
-        "Quadrat": 1,
-        "square": 1,
-        "Linie": 2,
-        "line": 2
+        "Kreis": "circle",
+        "circle": "circle",
+        "Quadrat": "square",
+        "square": "square",
+        "Linie": "line",
+        "line": "line"
     },
     "colors" : {
         "rot":0,

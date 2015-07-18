@@ -12,13 +12,13 @@ function drawObject(obj) {
 	var obyType = obj.object;
 	var clr = getClr(obj.color);
 	var size = obj.size;
-	if(obyType == S_CIRCLE) {
+	if(obyType == "circle") {
 		var position = randomPosition();
 		drawCircle(position, clr,size);
-	} else if(obyType == S_SQUARE) {
+	} else if(obyType == "square") {
 		var position = randomPosition();
 		drawRectangle(position,clr,size);
-	} else if(obyType == S_LINE) {
+	} else if(obyType == "line") {
 		var from = randomPosition();
 		var to = randomPosition();
 		drawLine(from,to,clr);
