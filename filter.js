@@ -4,7 +4,7 @@ var Filter = function (grammar) {
     this.available_objects = grammar.objects;
     this.available_colors = grammar.colors;
     this.available_positions = grammar.positions;
-    this.clear_command = grammar.clear_words;
+    this.available_commands = grammar.command;
     this.detected_object = undefined;
     this.detected_color = undefined;
     this.detected_size = undefined;
@@ -31,12 +31,9 @@ Filter.prototype.grab_color = function(microphone){
     }
 };
 
-Filter.prototype.maybe_clear = function(microphone){
-    for(var c in this.clear_words) {
-        if (this.clear_words.hasOwnProperty(microphone)) {
-            clear();
-        }
-    }
+Filter.prototype.grab_command = function(microphone){
+    if (this.available_commands.hasOwnProperty(microphone)) 
+        return this.available_commands[microphone]; 
 };
 
 Filter.prototype.clear = function() {
@@ -50,6 +47,20 @@ Filter.prototype.isReady = function() {
     && this.detected_object !== undefined
     && this.detected_size !== undefined;
 };
+
+Filter.prototype.draw = function() {
+    console.log("force draw");
+    if(this.detected_object == undefined) {
+        this.detected_object = random(3) | 0;
+    }
+    if(this.detected_color == undefined) {
+        this.detected_color = random(4) | 0;
+    }
+    if(this.detected_size == undefined) {
+        this.detected_size = random(20,150);
+    }
+    drawObject(this.instruction());
+}
 
 Filter.prototype.instruction = function(){
     return {
