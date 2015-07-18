@@ -1,12 +1,3 @@
-var S_CIRCLE = 0;
-var S_SQUARE = 1;
-var S_LINE = 2;
-
-var S_RED = 0;
-var S_GREEN = 1;
-var S_BLUE = 2;
-var S_BLACK = 3;
-//var S_YELLOW = 4;
 
 function drawObject(obj) {
 	var obyType = obj.object;
@@ -26,17 +17,14 @@ function drawObject(obj) {
 }
 
 function getClr(index) {
-	switch(index) {
-		case S_RED:
-			return color(255,0,0);
-		case S_GREEN:
-			return color(0,255,0);
-		case S_BLUE:
-			return color(0,0,255);
-		case S_BLACK:
-		default:
-			return color(0);
-	}
+	if(index == "red")
+		return color(255,0,0);
+	else if(index == "green")
+		return color(0,255,0);
+	else if(index =="blue")
+		return color(0,0,255);
+	else if(index =="black")
+		return color(0);
 }
 
 function randomPosition() {
