@@ -45,7 +45,14 @@
         siri.grab_object(mostrecentword);
         siri.grab_color(mostrecentword);
         siri.grab_size(mostrecentword);
-        siri.maybe_clear(mostrecentword);
+
+        command = siri.grab_command(mostrecentword);
+        if(command == 0) { // CLEAR
+            siri.clear();
+        } else if(command == 1) { // DRAW
+            siri.draw();
+        }
+
         console.log("instruction");
         console.log(siri.instruction());
         if(siri.isReady()) {

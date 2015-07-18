@@ -44,7 +44,6 @@ function randomPosition() {
 }
 
 function drawCircle(position, color, size) {
-	console.log("cc");
 	noStroke();
 	fill(color);
 	console.log(position.x+" "+color+" "+size);

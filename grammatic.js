@@ -17,7 +17,7 @@ var grammatic = {
         "schwarz": 3,
         "black": 3,
         //"gelb" : 4,
-        //"yellow" :4
+        // "yellow" :4
     },
     "positions" : {
         "top":0,
@@ -38,8 +38,10 @@ var grammatic = {
         // "left-right":13,
 
     },
-    "clear_words" : {
+    "command" : {
         "clear" : 0,
-        "start" : 0,
+        "start" : 0, // german
+        "draw" : 1,
+        "zeichnen": 1
     }
 };
