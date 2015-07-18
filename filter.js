@@ -11,7 +11,7 @@ var Filter = function (grammar) {
 
 Filter.prototype.grab_object = function(microphone){
     if (this.available_objects.hasOwnProperty(microphone)) {
-        this.detected_object = this.available_objects[microphone]; 
+        this.detected_object = this.available_objects[microphone];
     }
 };
 
@@ -25,7 +25,7 @@ Filter.prototype.grab_size = function(microphone){
 
 Filter.prototype.grab_color = function(microphone){
     if (this.available_colors.hasOwnProperty(microphone)) {
-        this.detected_colors = this.available_colors[microphone]; 
+        this.detected_color = this.available_colors[microphone];
     }
 };
 
