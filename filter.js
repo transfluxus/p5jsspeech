@@ -3,10 +3,12 @@
 var Filter = function (grammar) {
     this.available_objects = grammar.objects;
     this.available_colors = grammar.colors;
+    this.available_positions = grammar.positions;
     this.clear_command = grammar.clear_words;
     this.detected_object = undefined;
     this.detected_color = undefined;
     this.detected_size = undefined;
+    this.detected_position = undefined;
 };
 
 Filter.prototype.grab_object = function(microphone){
@@ -49,6 +51,13 @@ Filter.prototype.instruction = function(){
     return {
         "object": this.detected_object,
         "size": this.detected_size,
-        "color": this.detected_color
+        "color": this.detected_color,
+        "position": this.detected_color
     };
 };
+
+Filter.prototype.grab_position = function(microphone){
+    if (this.available_positions.hasOwnProperty(microphone)) {
+        this.detected_position = this.available_positions[microphone];
+    }
+}
