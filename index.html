@@ -10,7 +10,7 @@
     <script type="text/javascript" src="action.js"> </script>
     <script>
     var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
-    var shit = new Filter(grammatic);
+    var siri = new Filter(grammatic);
     myRec.continuous = true; // do continuous recognition
     myRec.interimResults = true; // allow partial recognition (faster, less accurate)
 
@@ -39,12 +39,15 @@
 
         console.log(mostrecentword);
 
-        shit.grab_object(mostrecentword);
-        <!-- filter.grab_color(mostrecentword); -->
-        <!-- filter.grab_size(mostrecentword); -->
+        siri.grab_object(mostrecentword);
+        siri.grab_color(mostrecentword);
+        siri.grab_size(mostrecentword);
         console.log("instruction");
         console.log(shit.instruction);
-        /*if (words.hasOwnProperty(mostrecentword)) {
+        /*
+        if (words.hasOwnProperty(mostrecentword)) {
+        console.log(siri.instruction());
+        if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
         } else if(colors.hasOwnProperty(mostrecentword)) {
