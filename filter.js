@@ -25,18 +25,22 @@ Filter.prototype.grab_size = function(microphone){
 
 Filter.prototype.grab_color = function(microphone){
     if (this.available_colors.hasOwnProperty(microphone)) {
-        this.detected_colors = this.available_colors[microphone]; 
+        this.detected_color = this.available_colors[microphone]; 
     }
 };
 
 Filter.prototype.maybe_clear = function(microphone){
     for(var c in this.clear_words) {
         if (this.clear_words.hasOwnProperty(microphone)) {
-            this.detected_object = undefined;
-            this.detected_color = undefined;
-            this.detected_size = undefined;
+            clear();
         }
     }
+};
+
+Filter.prototype.clear = function() {
+    this.detected_object = undefined;
+    this.detected_color = undefined;
+    this.detected_size = undefined;
 };
 
 Filter.prototype.isReady = function() {

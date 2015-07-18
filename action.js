@@ -9,15 +9,15 @@ var S_BLACK = 3;
 //var S_YELLOW = 4;
 
 function drawObject(obj) {
-	var obyType = obj.instruction().detected_object;
-	var clr = getColor(obj.instruction().detected_color);
-	var size = obj.instruction().detected_size;
-	if( obyType == S_CIRCLE) {
+	var obyType = obj.object;
+	var clr = getClr(obj.color);
+	var size = obj.size;
+	if(obyType == S_CIRCLE) {
 		var position = randomPosition();
-		drawCircle(position, clr,sz);
+		drawCircle(position, clr,size);
 	} else if(obyType == S_SQUARE) {
 		var position = randomPosition();
-		drawRectangle(position,clr,sz);
+		drawRectangle(position,clr,size);
 	} else if(obyType == S_LINE) {
 		var from = randomPosition();
 		var to = randomPosition();
@@ -25,7 +25,7 @@ function drawObject(obj) {
 	}
 }
 
-function getColor(index) {
+function getClr(index) {
 	switch(index) {
 		case S_RED:
 			return color(255,0,0);
@@ -39,35 +39,15 @@ function getColor(index) {
 	}
 }
 
-/* 
-function drawObject(objectIndex) {
-	console.log(objectIndex+"  "+S_SQUARE+"  "+(objectIndex == S_SQUARE));
-	if( objectIndex == S_CIRCLE) {
-		var position = randomPosition();
-		var clr = color(255,0,0);
-		var sz = random(30,60); 
-		drawCircle(position, clr,sz);
-	} else if(objectIndex == S_SQUARE) {
-		var position = randomPosition();
-		var clr = color(255,0,0);
-		var sz = random(30,60); 
-		drawRectangle(position,clr,sz);
-	} else if( objectIndex == S_LINE) {
-		var from = randomPosition();
-		var to = randomPosition();
-		var clr = color(255,0,0);
-		drawLine(from,to,clr);
-	}
-}
-*/
-
 function randomPosition() {
 	return createVector(random(width), random(height));
 }
 
 function drawCircle(position, color, size) {
+	console.log("cc");
 	noStroke();
 	fill(color);
+	console.log(position.x+" "+color+" "+size);
 	ellipse(position.x,position.y,size,size);
 }
 

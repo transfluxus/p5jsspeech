@@ -25,6 +25,9 @@
         background(255);
         myRec.onResult = parseResult; // recognition callback
         myRec.start(); // start engine
+
+    drawObject({object: 0, size: 50, color: 0});
+
     }
 
     function draw() {
@@ -47,7 +50,8 @@
         console.log(siri.instruction());
         if(siri.isReady()) {
             console.log("READY");
-            drawObject(siri);
+            drawObject(siri.instruction());
+            siri.clear();
         } else {
             console.log("Siri not ready yet");
         }
