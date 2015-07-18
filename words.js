@@ -4,5 +4,13 @@ var words = {
 	"Quadrat": 1,
 	"square": 1,
 	"Linie": 2,
-	"line": 2
+	"line": 2,
+	"x": 3,
+	"y": 4,
+	"rot":5,
+	"red": 5,
+	"grün":6,
+	"green": 6,
+	"blau": 7,
+	"blue": 7,
 };

@@ -28,6 +28,7 @@
 
     }
 
+
     function parseResult() {
         // recognition system will often append words into phrases.
         // so hack here is to only use the last word:
@@ -37,8 +38,16 @@
         if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
+        } else {
+            var number = parseInt(mostrecentword);
+            if(!isNaN(number)) {
+                console.log("number detected "+number);
+            }
         }
+        console.log("***********");
     }
+
+
 </script>
 </head>
 <body>
