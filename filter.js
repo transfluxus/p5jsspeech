@@ -38,6 +38,7 @@ Filter.prototype.grab_command = function(microphone){
 };
 
 Filter.prototype.clear = function() {
+    console.log("CLEARING!!");
     this.detected_object = undefined;
     this.detected_color = undefined;
     this.detected_size = undefined;
