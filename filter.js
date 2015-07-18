@@ -44,10 +44,10 @@ Filter.prototype.maybe_clear = function(microphone){
 };
 
 Filter.prototype.isReady = function() {
-    return this.detected_object != undefined
-    && this.detected_object != undefined
-    && this.detected_size != undefined;
-}
+    return this.detected_object !== undefined &&
+    this.detected_object !== undefined &&
+    this.detected_size !== undefined;
+};
 
 Filter.prototype.instruction = function(){
     return {
