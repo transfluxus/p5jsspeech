@@ -4,9 +4,9 @@ var Filter = function (words) {
     this.available_objects = words.objects;
     this.available_colors = words.colors;
     this.instruction = '';
-    this.detected_object = null;
-    this.detected_object = null;
-    this.detected_size = null;
+    this.detected_object = undefined;
+    this.detected_color = undefined;
+    this.detected_size = undefined;
 };
 
 Filter.prototype.grab_object = function(microphone){
@@ -32,6 +32,12 @@ Filter.prototype.grab_color = function(microphone){
         }
     }
 };
+
+Filter.prototype.isReady = function() {
+    return this.detected_object != undefined 
+    && this.detected_object != undefined
+    && this.detected_size != undefined;
+}
 
 Filter.prototype.instruction = function(){
     return {"blu" : "bla"};

@@ -44,7 +44,7 @@
         <!-- filter.grab_size(mostrecentword); -->
         console.log("instruction");
         console.log(shit.instruction);
-        if (words.hasOwnProperty(mostrecentword)) {
+        /*if (words.hasOwnProperty(mostrecentword)) {
             console.log("Found: "+mostrecentword+ " "+words[mostrecentword]);
             drawObject(words[mostrecentword]);
         } else if(colors.hasOwnProperty(mostrecentword)) {
@@ -56,6 +56,11 @@
             if(!isNaN(number)) {
                 console.log("number detected "+number);
             }
+        }
+        */
+        if(shit.isReady()) {
+            console.log("READY");
+            drawObject(shit);
         }
         console.log("***********");
     }
