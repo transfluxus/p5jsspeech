@@ -25,3 +25,4 @@ the shape is drawn at a random spot on the screen.
 
 you can also scream zeichnen or draw to draw with only a subset of parameters or scream clear,start to clear the already set parameters.
 
+developed in a view hours at the creative code Jam Berlin #21 July 18. 2015
