@@ -1,4 +1,5 @@
-# p5jsspeech
+# p5jsspeech - Siri for generative Art
+
 Finally speech supported generative Art!
 Based on the p5.js Speech Recognition
 
